@@ -3,6 +3,9 @@
 사람↔Claude 협업 폴더 컨벤션 + 얇은 CLI.
 Markdown으로 지시하고(`inbox/`), HTML로 결과를 받는다(`outbox/`). 폴더 이름이 곧 인터페이스.
 
+**Live docs:** https://sohee-zoe.github.io/baton/
+
+
 ## Prerequisites
 
 Node.js 18+
@@ -98,16 +101,3 @@ npm run test:conflicts  # init 충돌 정책 테스트 (4케이스)
 - [docs/index.html](./docs/index.html) — 문서 목록 인덱스
 - [docs/usage-guide.html](./docs/usage-guide.html) — 설치·명령·Claude 협업 가이드
 - [docs/architecture.html](./docs/architecture.html) — 데이터 플로우·디렉토리 다이어그램
-
-## GitHub Pages
-
-**Live docs:** https://sohee-zoe.github.io/baton/
-
-### Pages 설정 방법
-
-1. GitHub repo → **Settings** → **Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` / Folder: `/docs`
-4. Save
-
-`docs/` 아래 HTML이 그대로 서빙됨. 별도 빌드 단계 없음.

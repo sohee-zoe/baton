@@ -4,7 +4,7 @@
   task: 사람↔Claude 협업 툴 baton의 폴더 구조·통신 흐름·CLI를 한 화면에 시각화
   created: 2026-05-09
   aesthetic: editorial / warm paper, no purple, no Inter
-  requires network: Google Fonts (Fraunces, Newsreader, Noto Sans KR) + jsDelivr (Pretendard Variable)
+  requires network: Google Fonts (Noto Sans KR, JetBrains Mono) + jsDelivr (Pretendard Variable)
   note: docs/ HTML — CDN allowed per design.md §3.3. outbox/ HTML must be self-contained.
 -->
 <html lang="ko">
@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>baton — Architecture</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,800&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');
 
   :root {
@@ -29,6 +29,8 @@
     --rust:    #7a3520;
     --ivory:   #f9f3e3;
     --shadow:  0 1px 0 rgba(28,26,23,.08), 0 8px 24px -12px rgba(28,26,23,.18);
+    --sans: "Pretendard Variable", "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", "Symbols Nerd Font Mono", "Pretendard Variable", "Noto Sans KR", ui-monospace, monospace;
   }
 
   * { box-sizing: border-box; }
@@ -39,7 +41,7 @@
       radial-gradient(900px 500px at -10% 100%, #e9dcc0 0%, transparent 55%),
       var(--paper);
     color: var(--ink);
-    font-family: 'Newsreader', 'Pretendard Variable', 'Noto Sans KR', 'Iowan Old Style', 'Palatino', 'Georgia', serif;
+    font-family: var(--sans);
     font-weight: 400;
     line-height: 1.65;
     font-size: 17px;
@@ -277,6 +279,19 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
+  }
+
+  /* Sans/mono readability override for live docs */
+  h1, h2, h3, h4, .lede, .cmd-card p.muted, .principle b, .principle small {
+    font-family: var(--sans) !important;
+    font-style: normal !important;
+  }
+  code, pre, .pill, .legend, .masthead .issue, .masthead .meta, .crumbs, .sec-head .num, .sec-head .kicker, th, .colophon {
+    font-family: var(--mono) !important;
+  }
+  svg text {
+    font-family: var(--sans) !important;
+    font-style: normal !important;
   }
 </style>
 </head>
