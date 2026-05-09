@@ -10,7 +10,7 @@
 ## 컨텍스트 로드 순서
 
 기본: 이 파일 → `inbox/task.md` → `memory/decisions.md` → `memory/summary.md` (있으면)
-온디맨드: `inbox/context/*`, `docs/*` (명시 요청 시에만)
+온디맨드: `inbox/context/*` (명시 요청 시에만)
 **읽지 말 것**: `outbox/*.html` — 사용자가 명시 요청하지 않으면 읽지 않는다.
 
 ## 폴더 컨벤션
@@ -33,8 +33,3 @@
    - 형식: `YYYY-MM-DD: <결정> [근거: <짧게>]`
 3. **분량 원칙**: markdown 지시/결정 파일은 짧게 유지. 100줄 넘으면 분할 여부 질문.
 
-## 참고 문서
-
-- 상세 설계: `docs/design.md`
-- CLI 스펙: `docs/cli-spec.md`
-- PRD: `docs/prd.md`
