@@ -14,7 +14,7 @@ Node.js 18+
 
 ```sh
 # 글로벌 설치 (배포 후)
-npm install -g baton
+npm install -g @zollibee/baton
 
 # 로컬 개발
 git clone https://github.com/sohee-zoe/baton.git && cd baton
