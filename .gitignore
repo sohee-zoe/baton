@@ -148,6 +148,7 @@ vite.config.ts.timestamp-*
 # Local tool state
 .claude/
 .omc/
+AGENTS.md
 
 # Project: local dev
 *.local
