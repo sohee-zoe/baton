@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>baton — Documentation</title>
+<style>
+  :root {
+    --ink:        #2c2318;
+    --ink-muted:  #6b5c4a;
+    --paper:      #faf7f2;
+    --paper-warm: #f4ede0;
+    --paper-rule: #e8ddd0;
+    --terra:      #b05c3a;
+    --moss:       #5a7255;
+    --mono-bg:    #f0ebe3;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR",
+                 "Malgun Gothic", "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 80px 32px 128px;
+  }
+
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 28px;
+    margin-bottom: 56px;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3rem;
+    font-weight: normal;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    color: var(--ink-muted);
+    max-width: 480px;
+  }
+
+  /* ── Doc cards ── */
+  .docs-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+
+  .doc-card {
+    display: block;
+    text-decoration: none;
+    background: var(--paper-warm);
+    border: 1px solid var(--paper-rule);
+    border-radius: 10px;
+    padding: 24px 28px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .doc-card:hover {
+    border-color: var(--terra);
+    box-shadow: 0 2px 12px rgba(176,92,58,0.08);
+  }
+
+  .doc-card .doc-title {
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: var(--terra);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .doc-card .doc-desc {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+  }
+
+  .doc-card .doc-file {
+    font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    margin-top: 10px;
+    opacity: 0.7;
+  }
+
+  /* ── About ── */
+  .about {
+    border-top: 1px solid var(--paper-rule);
+    padding-top: 32px;
+    font-size: 0.875rem;
+    color: var(--ink-muted);
+  }
+
+  .about a { color: var(--terra); }
+
+  /* ── Install block ── */
+  .install {
+    background: var(--mono-bg);
+    border: 1px solid var(--paper-rule);
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+    font-size: 0.85rem;
+    margin: 16px 0;
+    color: var(--ink);
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 48px 20px 80px; }
+    h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">baton v0.1.0</p>
+    <h1>baton</h1>
+    <p class="tagline">
+      사람과 Claude 사이의 폴더 기반 통신 컨벤션.<br>
+      Markdown으로 지시하고, HTML로 결과를 받는다.
+    </p>
+  </header>
+
+  <ul class="docs-list">
+    <li>
+      <a class="doc-card" href="usage-guide.html">
+        <div class="doc-title">사용 가이드</div>
+        <div class="doc-desc">설치부터 CLI 명령, Claude와 협업하는 방법까지. 처음 시작하는 사용자에게 권장.</div>
+        <div class="doc-file">docs/usage-guide.html</div>
+      </a>
+    </li>
+    <li>
+      <a class="doc-card" href="architecture.html">
+        <div class="doc-title">아키텍처</div>
+        <div class="doc-desc">데이터 플로우 다이어그램, 디렉토리 트리, 명령별 시퀀스. SVG 인라인.</div>
+        <div class="doc-file">docs/architecture.html</div>
+      </a>
+    </li>
+  </ul>
+
+  <div class="about">
+    <p><strong>설치</strong></p>
+    <div class="install">npm install -g baton</div>
+    <p>
+      Node.js 18+ 필요. 외부 의존성 없음.<br>
+      소스 코드 및 이슈: <a href="https://github.com/sohee-zoe/baton">github.com/sohee-zoe/baton</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>

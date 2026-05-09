@@ -90,3 +90,24 @@ npm run test:conflicts  # init 충돌 정책 테스트 (4케이스)
 - **Version mismatch** — `baton status` 경고 표시, `--json`에서 양쪽 버전 노출, 자동 마이그레이션 없음
 
 상세 설계: [docs/design.md](./docs/design.md) · CLI 스펙: [docs/cli-spec.md](./docs/cli-spec.md)
+
+## Documentation
+
+브라우저에서 직접 열 수 있는 HTML 문서 (빌드 불필요):
+
+- [docs/index.html](./docs/index.html) — 문서 목록 인덱스
+- [docs/usage-guide.html](./docs/usage-guide.html) — 설치·명령·Claude 협업 가이드
+- [docs/architecture.html](./docs/architecture.html) — 데이터 플로우·디렉토리 다이어그램
+
+## GitHub Pages
+
+**Live docs:** https://sohee-zoe.github.io/baton/
+
+### Pages 설정 방법
+
+1. GitHub repo → **Settings** → **Pages**
+2. Source: **Deploy from a branch**
+3. Branch: `main` / Folder: `/docs`
+4. Save
+
+`docs/` 아래 HTML이 그대로 서빙됨. 별도 빌드 단계 없음.
