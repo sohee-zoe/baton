@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>baton — Markdown Viewer</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --ink: #2c2318;
+    --muted: #6b5c4a;
+    --rule: #e8ddd0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
+  }
+  .wrap {
+    width: min(1200px, 96vw);
+    margin: 0 auto;
+    padding: 28px 20px 48px;
+  }
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .title {
+    font-size: 1.1rem;
+    color: var(--muted);
+  }
+  .hint {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .links a {
+    color: #b05c3a;
+    text-decoration: none;
+    margin-left: 12px;
+    font-size: 0.95rem;
+  }
+  .links a:hover { text-decoration: underline; }
+  pre {
+    margin: 0;
+    padding: 18px;
+    border: 1px solid var(--rule);
+    background: #f0ebe3;
+    overflow: auto;
+    line-height: 1.7;
+    font-size: 15px;
+    font-family: "JetBrains Mono", "Symbols Nerd Font Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: pre;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="title" id="title">Loading…</div>
+      <div class="links">
+        <a href="./index.html">Docs Index</a>
+        <a href="./architecture.html">Architecture</a>
+      </div>
+    </div>
+    <p class="hint">권장 환경: GitHub Pages/HTTP. 로컬 file://에서는 브라우저 보안 정책으로 로드가 제한될 수 있습니다.</p>
+    <pre id="content">Loading markdown...</pre>
+  </div>
+<script>
+  const allowed = new Set(["prd.md", "design.md", "cli-spec.md"]);
+  const params = new URLSearchParams(location.search);
+  const file = params.get("file");
+  const titleEl = document.getElementById("title");
+  const contentEl = document.getElementById("content");
+
+  if (!file || !allowed.has(file)) {
+    titleEl.textContent = "Invalid file";
+    contentEl.textContent = "Use ?file=prd.md | design.md | cli-spec.md";
+  } else {
+    titleEl.textContent = file + " (Markdown Source)";
+    fetch("./" + file)
+      .then((r) => {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.text();
+      })
+      .then((text) => {
+        contentEl.textContent = text;
+      })
+      .catch((e) => {
+        contentEl.textContent = "Failed to load " + file + "\\n" + e.message;
+      });
+  }
+</script>
+</body>
+</html>

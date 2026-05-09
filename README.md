@@ -2,8 +2,10 @@
 
 사람↔Claude 협업 폴더 컨벤션 + 얇은 CLI.
 Markdown으로 지시하고(`inbox/`), HTML로 결과를 받는다(`outbox/`). 폴더 이름이 곧 인터페이스.
+A convention-first CLI for human↔Claude collaboration.
+Use Markdown for instructions (`inbox/`) and HTML for outputs (`outbox/`).
 
-**Live docs:** https://sohee-zoe.github.io/baton/
+**Live docs:** https://sohee-zoe.github.io/baton/docs/index.html
 
 
 ## Prerequisites
