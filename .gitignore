@@ -141,3 +141,21 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# macOS
+.DS_Store
+
+# Local tool state
+.claude/
+.omc/
+
+# Project: local dev
+*.local
+.vscode/
+.idea/
+tmp/
+temp/
+
+# Project: outbox policy
+outbox/*.html
+!outbox/.gitkeep
