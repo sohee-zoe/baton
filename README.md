@@ -14,7 +14,7 @@ Node.js 18+
 npm install -g baton
 
 # 로컬 개발
-git clone <repo> && cd baton
+git clone https://github.com/sohee-zoe/baton.git && cd baton
 npm link
 ```
 
