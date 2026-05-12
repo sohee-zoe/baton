@@ -18,6 +18,9 @@ Node.js 18+
 # 글로벌 설치
 npm install -g @zollibee/baton
 
+# 글로벌 업데이트
+npm update -g @zollibee/baton
+
 # 로컬 개발
 git clone https://github.com/sohee-zoe/baton.git && cd baton
 npm link
