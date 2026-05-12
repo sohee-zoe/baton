@@ -85,12 +85,16 @@ project/
 ```sh
 npm run smoke           # 전체 워크플로 통합 테스트 (7단계)
 npm run test:conflicts  # init 충돌 정책 테스트 (4케이스)
+npm run test:archive    # task archive 파일명 충돌 방지 테스트
+npm run test:open       # 브라우저 open 실패 fallback 테스트
+npm test                # 전체 테스트
 ```
 
 ## Design Notes
 
 - **Zero external deps** — Node.js 내장 모듈만 사용
 - **Markdown in, HTML out** — 짧은 마크다운으로 지시, 풍부한 HTML로 결과 수신
+- **Static HTML by default** — `outbox/` 산출물은 기본적으로 정적 HTML/CSS/SVG, JavaScript는 task가 명시 요청한 경우에만 사용
 - **Append-only memory** — `decisions.md` / `open-questions.md` 줄 삭제 금지
 - **Version mismatch** — `baton status` 경고 표시, `--json`에서 양쪽 버전 노출, 자동 마이그레이션 없음
 
@@ -103,3 +107,5 @@ npm run test:conflicts  # init 충돌 정책 테스트 (4케이스)
 - [docs/index.html](./docs/index.html) — 문서 목록 인덱스
 - [docs/usage-guide.html](./docs/usage-guide.html) — 설치·명령·Claude 협업 가이드
 - [docs/architecture.html](./docs/architecture.html) — 데이터 플로우·디렉토리 다이어그램
+
+`docs/`는 npm 패키지에 포함되어 설치본에서도 위 로컬 링크를 열 수 있다.

@@ -47,14 +47,14 @@ Markdown은 사람→Claude 방향에, HTML은 Claude→사람 방향에 쓴다.
 |------|------|------|
 | `inbox/task.md` | 사람 → Claude | 40줄 이내. |
 | `inbox/context/` | 사람 → Claude | 온디맨드 로드. |
-| `outbox/` | Claude → 사람 | `NNN-slug.html` 단일 파일. No CDN. |
+| `outbox/` | Claude → 사람 | `NNN-slug.html` 단일 파일. No CDN/network. JS는 task가 명시 요청한 경우만. |
 | `memory/decisions.md` | 양방향 | Append-only. 삭제 금지. |
 | `memory/open-questions.md` | 양방향 | resolved 시 같은 줄에 표시. |
 | `memory/summary.md` | 양방향 | 세션 부트스트랩용 20줄 요약. |
 
 ## Claude가 해야 할 것
 
-1. **산출물**: `outbox/NNN-slug.html`. 번호는 현재 최대 + 1 (3자리 zero-pad). 파일 첫 줄에 메타 주석.
+1. **산출물**: `outbox/NNN-slug.html`. 번호는 현재 최대 + 1 (3자리 zero-pad). 파일 첫 줄에 메타 주석. 기본은 정적 HTML/CSS/SVG, JS는 task가 명시 요청한 경우만.
 2. **결정 기록**: 새 결정 → `memory/decisions.md` append. 형식: `YYYY-MM-DD: <결정> [근거: <짧게>]`
 3. **문서 수정 시**: PRD ↔ design ↔ cli-spec ↔ architecture 일관성 유지.
 

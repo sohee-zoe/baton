@@ -26,10 +26,10 @@
 
 ## Claude가 해야 할 것
 
-1. **산출물**: `outbox/NNN-slug.html` 형식으로. 외부 CDN 사용 금지, single-file self-contained.
+1. **산출물**: `outbox/NNN-slug.html` 형식으로. 외부 CDN/이미지/네트워크 요청 금지, single-file self-contained.
    - 번호는 현재 outbox 최대값 + 1 (3자리 zero-pad).
    - 파일 첫 줄에 `<!-- title: ... task: ... created: ... -->` 메타 주석.
+   - 기본은 정적 HTML/CSS/SVG. JavaScript는 `inbox/task.md`가 명시 요청한 경우에만 사용.
 2. **결정 기록**: 새 결정 발생 시 `memory/decisions.md`에 한 줄 append.
    - 형식: `YYYY-MM-DD: <결정> [근거: <짧게>]`
 3. **분량 원칙**: markdown 지시/결정 파일은 짧게 유지. 100줄 넘으면 분할 여부 질문.
-

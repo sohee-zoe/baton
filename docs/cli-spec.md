@@ -60,7 +60,7 @@
 
    - outbox/에 single-file html로 결과를 남길 것.
    ```
-4. 출력:
+4. 브라우저 실행 명령이 성공 종료하면 출력:
    ```
    ✓ inbox/task.md 갱신: <task>
      이전 task → inbox/.archive/<timestamp>.md
@@ -91,7 +91,7 @@
 
 ### 에러 / 엣지
 - `outbox/`에 html 0개 → exit 0, `outbox/가 비어있습니다. Claude에게 결과를 outbox/에 남기도록 요청하세요.`
-- 브라우저 spawn 실패 → exit 1 + stderr에 안내:
+- 브라우저 spawn 실패 또는 실행 명령의 non-zero exit → exit 1 + stderr에 안내:
   ```
   ! 브라우저 자동 실행 실패. 다음 URL을 직접 여세요:
     file:///abs/path/to/outbox/007-payment-flow-explainer.html

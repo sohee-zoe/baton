@@ -69,7 +69,7 @@ project-root/
 - 파일명: 3자리 zero-padded 일련번호 + `-` + kebab-case slug + `.html`
   - 예: `007-payment-flow-explainer.html`
 - 일련번호는 *현재 outbox에 있는 최대 번호 + 1*. 번호는 재사용하지 않는다.
-- **Single-file self-contained.** 외부 CDN, 외부 이미지 사용 금지. SVG·CSS·JS 인라인. *(이 규칙은 `outbox/`에만 적용. `docs/`의 시각자료 HTML은 웹폰트 CDN 허용, 단 주석에 "requires network" 명시)*
+- **Single-file self-contained.** 외부 CDN, 외부 이미지, 외부 네트워크 요청 금지. CSS·SVG 인라인. JavaScript는 `inbox/task.md`가 명시적으로 인터랙션을 요청한 경우에만 인라인으로 사용. *(이 규칙은 `outbox/`에만 적용. `docs/`의 시각자료 HTML은 웹폰트 CDN 허용, 단 주석에 "requires network" 명시)*
 - 파일 첫 부분에 메타 주석:
   ```html
   <!--
@@ -130,7 +130,7 @@ project-root/
 
 - **`baton.json` 없음 + `init` 외 명령** → exit 1, “여기는 baton 프로젝트가 아닙니다. `baton init`을 먼저 실행하세요.”
 - **`outbox/`에 html 0개 + `open`** → exit 0, “outbox가 비어있습니다.”
-- **OS 기본 브라우저 오픈 실패** → 절대경로 file:// URL을 stdout에 출력 (사람이 직접 복붙 가능).
+- **OS 기본 브라우저 오픈 실패** → 절대경로 file:// URL을 stderr에 출력 (사람이 직접 복붙 가능).
 - **충돌 정책 (init, lenient)**: 디렉토리가 이미 있으면 누락 파일만 생성, 기존 파일 덮어쓰지 않음. 디렉토리 위치에 *파일*이 있으면 exit 1.
 - **번호 충돌 (외부에서 같은 NNN을 만든 경우)** → Claude가 직접 outbox를 만들 때의 책임. CLI는 번호를 만들지 않는다 (현재 MVP에서 자동 생성 명령 없음).
 

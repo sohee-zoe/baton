@@ -9,6 +9,7 @@
   "files": [
     "bin/",
     "lib/",
+    "docs/",
     "README.md"
   ],
   "engines": {
@@ -17,7 +18,9 @@
   "scripts": {
     "smoke": "node test/smoke.mjs",
     "test:conflicts": "node test/init-conflicts.mjs",
-    "test": "npm run smoke && npm run test:conflicts"
+    "test:archive": "node test/archive-collision.mjs",
+    "test:open": "node test/open-failure.mjs",
+    "test": "npm run smoke && npm run test:conflicts && npm run test:archive && npm run test:open"
   },
   "license": "MIT"
 }
