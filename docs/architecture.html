@@ -58,21 +58,9 @@
 
   /* —— Masthead —— */
   .masthead {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
     border-bottom: 2px solid var(--ink);
     padding-bottom: 18px;
     margin-bottom: 36px;
-    gap: 24px;
-  }
-  .masthead .issue {
-    font-family: 'JetBrains Mono', 'Pretendard Variable', 'Noto Sans KR', monospace;
-    font-size: 16px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 6px;
   }
   .masthead h1 {
     font-family: 'Fraunces', 'Pretendard Variable', 'Iowan Old Style', serif;
@@ -87,17 +75,6 @@
     font-weight: 300;
     color: var(--terra);
   }
-  .masthead .meta {
-    font-family: 'JetBrains Mono', 'Pretendard Variable', 'Noto Sans KR', monospace;
-    font-size: 16px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    text-align: right;
-    text-transform: uppercase;
-    line-height: 1.6;
-  }
-  .masthead .meta b { color: var(--ink); }
-
   .lede {
     font-family: 'Fraunces', 'Pretendard Variable', 'Noto Sans KR', serif;
     font-weight: 300;
@@ -279,25 +256,12 @@
   }
   .principle small { font-family: 'Newsreader', 'Noto Sans KR', 'Pretendard Variable', serif; font-size: 21px; color: var(--ink-2); line-height: 1.6; }
 
-  /* footer */
-  .colophon {
-    margin-top: 72px;
-    padding-top: 16px;
-    border-top: 2px solid var(--ink);
-    display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap;
-    font-family: 'JetBrains Mono', 'Pretendard Variable', 'Noto Sans KR', monospace;
-    font-size: 15px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
   /* Sans/mono readability override for live docs */
   h1, h2, h3, h4, .lede, .cmd-card p.muted, .principle b, .principle small {
     font-family: var(--sans) !important;
     font-style: normal !important;
   }
-  code, pre, .pill, .legend, .masthead .issue, .masthead .meta, .crumbs, .sec-head .num, .sec-head .kicker, th, .colophon {
+  code, pre, .pill, .legend, .crumbs, .sec-head .num, .sec-head .kicker, th {
     font-family: var(--mono) !important;
   }
   svg text {
@@ -321,22 +285,16 @@
       gap: 12px;
       margin-bottom: 28px;
     }
-    .masthead .issue,
-    .masthead .meta,
     .crumbs,
     .sec-head .num,
     .sec-head .kicker,
-    .legend,
-    .colophon {
+    .legend {
       font-size: 12px;
       letter-spacing: 0.08em;
     }
     .masthead h1 {
       font-size: clamp(40px, 15vw, 58px);
       line-height: 1;
-    }
-    .masthead .meta {
-      text-align: left;
     }
     .lede {
       font-size: 20px;
@@ -423,10 +381,6 @@
     .principle b {
       font-size: 18px;
     }
-    .colophon {
-      display: grid;
-      gap: 8px;
-    }
   }
 </style>
 </head>
@@ -436,13 +390,7 @@
 <!-- ============== MASTHEAD ============== -->
 <header class="masthead">
   <div>
-    <div class="issue">Vol. 0 · Issue 1 — Sketch / 2026-05-09</div>
     <h1>baton<em>: at a glance</em></h1>
-  </div>
-  <div class="meta">
-    Edition <b>00</b><br/>
-    Format <b>HTML, single-file</b><br/>
-    Loop <b>Human · Claude</b>
   </div>
 </header>
 
@@ -722,13 +670,6 @@ project-root/
   <div class="panel principle"><div class="ord">iv.</div> <div><b>Fail loud</b><small>자동 복구하지 않는다. 사람이 즉시 인지.</small></div></div>
   <div class="panel principle"><div class="ord">v.</div>  <div><b>Append &gt; overwrite</b><small>memory는 누적. task는 archive 후 덮어씀.</small></div></div>
   <div class="panel principle"><div class="ord">vi.</div> <div><b>Idempotent</b><small>같은 명령 두 번 호출해도 안전.</small></div></div>
-</div>
-
-<!-- ============== COLOPHON ============== -->
-<div class="colophon">
-  <span>baton · sketched 2026-05-09</span>
-  <span>Single-file HTML · No external CDN beyond fonts</span>
-  <span>Set in <i>Fraunces</i> · <i>Newsreader</i> · <i>JetBrains Mono</i></span>
 </div>
 
 </div>
