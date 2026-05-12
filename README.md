@@ -15,7 +15,7 @@ Node.js 18+
 ## Install
 
 ```sh
-# 글로벌 설치 (배포 후)
+# 글로벌 설치
 npm install -g @zollibee/baton
 
 # 로컬 개발
