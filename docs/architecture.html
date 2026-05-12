@@ -34,7 +34,7 @@
   }
 
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
+  html, body { margin: 0; padding: 0; overflow-x: hidden; }
   body {
     background:
       radial-gradient(1200px 600px at 90% -10%, #efe2c5 0%, transparent 60%),
@@ -46,6 +46,7 @@
     line-height: 1.8;
     font-size: 25.5px;
     word-break: keep-all;
+    overflow-wrap: anywhere;
   }
   :lang(ko), [lang="ko"] { font-feature-settings: "kern"; }
 
@@ -78,7 +79,7 @@
     font-weight: 800;
     font-size: clamp(48px, 7vw, 92px);
     line-height: 0.92;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     margin: 0;
   }
   .masthead h1 em {
@@ -102,9 +103,9 @@
     font-weight: 300;
     font-size: clamp(20px, 3.6vw, 29px);
     line-height: 1.4;
-    letter-spacing: -0.005em;
+    letter-spacing: 0;
     color: var(--ink-2);
-    max-width: 12000px;
+    max-width: 980px;
     margin: 0 0 6px;
   }
   .lede::first-letter {
@@ -154,7 +155,7 @@
     font-style: italic;
     font-size: 45px;
     margin: 0;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
   }
   .sec-head .kicker {
     font-family: 'JetBrains Mono', 'Pretendard Variable', 'Noto Sans KR', monospace;
@@ -249,7 +250,7 @@
     font-size: 22px;
     font-weight: 700;
     color: var(--rust);
-    letter-spacing: -0.005em;
+    letter-spacing: 0;
   }
   .cmd-card p.muted { font-family: 'Newsreader', 'Noto Sans KR', 'Pretendard Variable', serif; font-size: 21px; color: var(--ink-2); margin: 0 0 10px; line-height: 1.6; }
 
@@ -272,7 +273,7 @@
     font-family: 'Fraunces', 'Pretendard Variable', 'Noto Sans KR', serif;
     font-weight: 600;
     font-size: 24px;
-    letter-spacing: -0.005em;
+    letter-spacing: 0;
     display: block;
     margin-bottom: 2px;
   }
@@ -302,6 +303,130 @@
   svg text {
     font-family: var(--sans) !important;
     font-style: normal !important;
+  }
+
+  @media (max-width: 760px) {
+    body {
+      font-size: 18px;
+      line-height: 1.72;
+      word-break: normal;
+    }
+    .wrap {
+      width: 100%;
+      padding: 30px 14px 64px;
+    }
+    .masthead {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .masthead .issue,
+    .masthead .meta,
+    .crumbs,
+    .sec-head .num,
+    .sec-head .kicker,
+    .legend,
+    .colophon {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+    .masthead h1 {
+      font-size: clamp(40px, 15vw, 58px);
+      line-height: 1;
+    }
+    .masthead .meta {
+      text-align: left;
+    }
+    .lede {
+      font-size: 20px;
+      line-height: 1.45;
+      word-break: break-all;
+      overflow-wrap: anywhere;
+      line-break: anywhere;
+      white-space: normal;
+      max-width: calc(100vw - 28px);
+    }
+    .lede::first-letter {
+      float: none;
+      font-size: inherit;
+      padding: 0;
+    }
+    .crumbs {
+      margin-bottom: 34px;
+      line-height: 1.8;
+      word-break: break-all;
+      overflow-wrap: anywhere;
+      line-break: anywhere;
+      white-space: normal;
+    }
+    .crumbs a {
+      display: inline-block;
+    }
+    .sec-head {
+      grid-template-columns: 44px 1fr;
+      gap: 10px;
+      margin: 42px 0 14px;
+    }
+    .sec-head h2 {
+      font-size: 30px;
+    }
+    .panel {
+      padding: 16px;
+      overflow: hidden;
+    }
+    pre {
+      font-size: 13px;
+      line-height: 1.65;
+      padding: 12px;
+    }
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      font-size: 15px;
+    }
+    th {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+    th, td {
+      padding: 8px 10px;
+    }
+    .cmd-card {
+      min-height: auto;
+    }
+    .cmd-card h3 {
+      font-size: 18px;
+      overflow-wrap: anywhere;
+    }
+    .cmd-card p.muted,
+    .principle small,
+    small,
+    .muted {
+      font-size: 16px;
+      word-break: break-all;
+      overflow-wrap: anywhere;
+      line-break: anywhere;
+      white-space: normal;
+    }
+    .pill {
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+    .principle {
+      grid-template-columns: 22px 1fr;
+    }
+    .principle .ord {
+      font-size: 25px;
+    }
+    .principle b {
+      font-size: 18px;
+    }
+    .colophon {
+      display: grid;
+      gap: 8px;
+    }
   }
 </style>
 </head>

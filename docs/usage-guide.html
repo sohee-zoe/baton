@@ -22,6 +22,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { overflow-x: hidden; }
 
   body {
     font-family: "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR",
@@ -31,6 +32,9 @@
     color: var(--ink);
     background: var(--paper);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
   }
 
   h1, h2, h3 {
@@ -54,6 +58,7 @@
     display: flex;
     gap: 16px;
     align-items: center;
+    flex-wrap: wrap;
   }
   .sitenav a { color: var(--terra); text-decoration: none; }
   .sitenav a:hover { text-decoration: underline; }
@@ -132,14 +137,14 @@
     align-items: center;
     gap: 12px;
     margin: 28px 0;
-    overflow-x: auto;
+    width: 100%;
   }
 
   .flow-node {
     flex: 1;
     text-align: center;
     padding: 14px 10px;
-    min-width: 180px;
+    min-width: 0;
   }
   .flow-node .icon { font-size: 1.6rem; display: block; margin-bottom: 6px; }
   .flow-node .role {
@@ -275,13 +280,68 @@
 
   @media (max-width: 900px) {
     .wrap { width: min(100%, 100vw); }
+    .conv-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
   }
 
   @media (max-width: 600px) {
-    .wrap { padding: 40px 20px 80px; }
-    header h1 { font-size: 2.8rem; }
+    body { font-size: 18px; line-height: 1.75; word-break: normal; }
+    .sitenav { padding: 10px 16px; font-size: 0.98rem; }
+    .wrap { padding: 32px 16px 72px; }
+    header { margin-bottom: 40px; }
+    header h1 { font-size: 2.35rem; }
+    header h1 .sub { font-size: 1.05rem; }
+    h2 { font-size: 1.65rem; }
+    h3 { font-size: 1.25rem; }
+    .concept { padding: 16px 18px; }
     .flow { flex-direction: column; }
-    .flow-arrow { transform: rotate(90deg); }
+    .flow-node { width: 100%; padding: 13px 14px; }
+    .flow-arrow {
+      width: auto;
+      height: 24px;
+      line-height: 24px;
+      font-size: 1.35rem;
+    }
+    .flow-arrow::before { content: "↓"; font-size: 1.35rem; }
+    .flow-arrow { font-size: 0; }
+    .tree { padding: 16px; }
+    .tree pre,
+    pre.shell {
+      font-size: 0.86rem;
+      line-height: 1.65;
+    }
+    .cmd-header {
+      display: grid;
+      gap: 6px;
+      align-items: start;
+    }
+    .cmd-name { font-size: 1rem; white-space: normal; }
+    .meta,
+    p,
+    .concept,
+    .cmd-desc,
+    .steps li .step-sub,
+    .tip {
+      font-size: 1rem;
+      word-break: break-all;
+      overflow-wrap: anywhere;
+      line-break: anywhere;
+      white-space: normal !important;
+      max-width: calc(100vw - 32px);
+    }
+    .flow-node.shared { width: 100% !important; }
+    .flow-node.shared .name {
+      display: block !important;
+      word-break: break-all;
+      overflow-wrap: anywhere;
+      line-break: anywhere;
+      white-space: normal !important;
+      max-width: 100%;
+    }
+    .steps li { gap: 12px; }
   }
 </style>
 </head>
@@ -301,7 +361,7 @@
       baton
       <span class="sub">사람과 Claude 사이의 폴더 기반 통신 컨벤션</span>
     </h1>
-    <p class="meta">docs/usage-guide.html &nbsp;·&nbsp; baton v0.1.1</p>
+    <p class="meta">docs/usage-guide.html · baton v0.1.1</p>
   </header>
 
   <!-- 0. 핵심 아이디어 -->
