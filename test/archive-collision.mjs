@@ -17,7 +17,7 @@ const timestamp = '2026-05-12T08-44-16';
 
 try {
   mkdirSync(join(dir, 'inbox', '.archive'), { recursive: true });
-  writeFileSync(join(dir, 'baton.json'), JSON.stringify({ name: 'ArchiveTest', batonVersion: '0.1.0' }));
+  writeFileSync(join(dir, 'baton.json'), JSON.stringify({ name: 'ArchiveTest', batonVersion: '0.1.1' }));
   writeFileSync(join(dir, 'inbox', 'task.md'), '# old task\n');
   writeFileSync(join(dir, 'inbox', '.archive', `${timestamp}.md`), '# existing archive\n');
 

@@ -96,7 +96,7 @@ project-root/
 {
   "name": "<project-name>",
   "createdAt": "<ISO>",
-  "batonVersion": "0.1.0"
+  "batonVersion": "0.1.1"
 }
 ```
 
@@ -171,7 +171,7 @@ baton/                  ← 이 리포 자체
 
 ## 9. 버전 정책
 
-- semver. MVP는 `0.1.0`.
+- semver. 현재 릴리스는 `0.1.1`.
 - breaking convention 변경 시 minor bump (예: 폴더 이름 변경 → `0.2.0`).
 - **버전 불일치 정책**:
   - `baton status` (human): 끝에 `! 버전 불일치: file=<x> running=<y>` 경고 출력.

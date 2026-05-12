@@ -26,7 +26,7 @@ try {
     case 'status':  await status(args);    break;
     case '--version':
     case '-v':
-      process.stdout.write('baton 0.1.0\n');
+      process.stdout.write('baton 0.1.1\n');
       break;
     case '--help':
     case '-h':

@@ -1,6 +1,6 @@
 {
   "name": "@zollibee/baton",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "사람↔Claude 협업 폴더 컨벤션 + 얇은 CLI",
   "type": "module",
   "bin": {

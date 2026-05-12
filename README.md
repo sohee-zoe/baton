@@ -56,8 +56,8 @@ baton open               # 최신 outbox/*.html 브라우저로 열기
   "latestOutbox": "001-usage-guide.html",
   "openQuestionsCount": 0,
   "batonVersion": {
-    "file": "0.1.0",
-    "running": "0.1.0"
+    "file": "0.1.1",
+    "running": "0.1.1"
   }
 }
 ```

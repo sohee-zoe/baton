@@ -37,7 +37,7 @@ try {
   const outboxDir = join(dir, 'outbox');
   mkdirSync(binDir);
   mkdirSync(outboxDir);
-  writeFileSync(join(dir, 'baton.json'), JSON.stringify({ name: 'OpenFailure', batonVersion: '0.1.0' }));
+  writeFileSync(join(dir, 'baton.json'), JSON.stringify({ name: 'OpenFailure', batonVersion: '0.1.1' }));
   writeFileSync(join(outboxDir, '001-결과 파일.html'), '<!doctype html><title>test</title>');
 
   const fakeOpener = join(binDir, cmd);
