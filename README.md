@@ -16,10 +16,10 @@ Node.js 18+
 
 ```sh
 # 글로벌 설치
-npm install -g @zollibee/baton
+npm install -g @zollibee/baton@latest
 
 # 글로벌 업데이트
-npm update -g @zollibee/baton
+npm install -g @zollibee/baton@latest
 
 # 로컬 개발
 git clone https://github.com/sohee-zoe/baton.git && cd baton
